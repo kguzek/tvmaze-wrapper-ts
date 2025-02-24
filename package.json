@@ -1,7 +1,7 @@
 {
   "name": "tvmaze-wrapper-ts",
-  "version": "2.0.0",
-  "description": "A Node.js wrapper to the TVMaze API written in TypeScript.",
+  "version": "2.0.1",
+  "description": "A Node.js wrapper to the TVmaze API written in TypeScript.",
   "license": "AGPL-3.0-only",
   "author": "Johann Berger (https://github.com/JohnDeved)",
   "contributors": [
@@ -34,7 +34,7 @@
   "scripts": {
     "build:cjs": "tsc --module commonjs --outDir dist/cjs/ && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
     "build:esm": "tsc --module esnext --outDir dist/esm/ && echo '{\"type\":\"module\"}' > dist/esm/package.json",
-    "build": "npm run build:cjs && npm run build:esm",
+    "build": "npm run build:cjs && npm run build:esm; rm -rf ./tvmaze-wrapper-ts-*.tgz; npm pack",
     "test": "node dist/cjs/tests/index.js",
     "format": "prettier --write ."
   },

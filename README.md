@@ -1,6 +1,6 @@
-# TVMaze Wrapper (TypeScript)
+# TVmaze Wrapper (TypeScript)
 
-A wrapper to the [TVMaze API](https://api.tvmaze.com) written in TypeScript using Node.js.
+A wrapper to the [TVmaze API](https://api.tvmaze.com) written in TypeScript using Node.js.
 
 ## Why fork?
 
@@ -39,7 +39,7 @@ const details = await tvMaze.findShowById(show.id);
 The original README.md is preserved at [README.original.md](https://github.com/kguzek/tvmaze-wrapper-ts/blob/main/README.original.md).
 It lists all available API functions and methods. This package has renamed all of these to be more logical and consistent, but the same functions are implemented.
 
-The only exception is the [episode trailer scraper](https://github.com/JohnDeved/node-tvmaze-api-ts?tab=readme-ov-file#episode-trailer) which has been removed as it introduced an additional dependency and is not strictly related to the TVMaze API. This package therefore has absolutely **no dependencies**, since all requests are made using the native `fetch` API.
+The only exception is the [episode trailer scraper](https://github.com/JohnDeved/node-tvmaze-api-ts?tab=readme-ov-file#episode-trailer) which has been removed as it introduced an additional dependency and is not strictly related to the TVmaze API. This package therefore has absolutely **no dependencies**, since all requests are made using the native `fetch` API.
 
 ## Credits
 
@@ -48,3 +48,19 @@ Original package was written by [Johann Berger](https://github.com/JohnDeved).
 Contributions to the original package by [Josh Thompson](https://github.com/joshthompson).
 
 Improvements and rewrite by [Konrad Guzek](https://github.com/kguzek).
+
+## Copyright
+
+SPDX-License-Identifier: AGPL-3.0-only
+
+TVmaze Wrapper (TypeScript)
+
+Copyright © 2025 Konrad Guzek
+
+This file is part of "TVmaze Wrapper (TypeScript)". It is an adaptation of [node-tvmaze-api-ts](https://github.com/JohnDeved/node-tvmaze-api-ts), released under the ISC license. This project, "TVmaze Wrapper (TypeScript)", is released under the [GNU Affero General Public License, Version 3](https://www.gnu.org/licenses/agpl-3.0.en.html).
+
+### Usage of TVmaze API
+
+(copied from [tvmaze.com](https://www.tvmaze.com/api#licensing))
+
+Use of the TVmaze API is licensed by CC BY-SA. This means the data can freely be used for any purpose, as long as TVmaze is properly credited as source and your application complies with the ShareAlike provision. You can satisfy the attribution requirement by linking back to TVmaze from within your application or website, for example using the URLs available in the API.

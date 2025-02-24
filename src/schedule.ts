@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-only */
+/*      TVmaze Wrapper (TypeScript)       */
+/*     Copyright © 2025 Konrad Guzek      */
+
 import { fetchFromTvMaze } from "./api";
 import type { Episode, HasEmbedded } from "./types";
 
