@@ -1,17 +1,23 @@
 {
-  "name": "tvmaze-api-ts",
-  "version": "1.0.21",
-  "description": "node.js tvmaze scraper and api wrapper written in typescript",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "scripts": {
-    "test": "node test"
-  },
-  "author": "undefined",
-  "homepage": "https://github.com/JohnDeved/node-tvmaze-api-ts",
+  "name": "tvmaze-wrapper-ts",
+  "version": "2.0.0",
+  "description": "A Node.js wrapper to the TVMaze API written in TypeScript.",
+  "license": "AGPL-3.0-only",
+  "author": "Johann Berger (https://github.com/JohnDeved)",
+  "contributors": [
+    "Josh Thompson (https://github.com/joshthompson)",
+    "Konrad Guzek (https://github.com/kguzek)"
+  ],
+  "maintainers": [
+    "Konrad Guzek"
+  ],
+  "homepage": "https://github.com/kguzek/tvmaze-wrapper-ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JohnDeved/node-tvmaze-api-ts"
+    "url": "git+https://github.com/kguzek/tvmaze-wrapper-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kguzek/tvmaze-wrapper-ts/issues"
   },
   "keywords": [
     "tvmaze",
@@ -21,19 +27,38 @@
     "wraper",
     "tvmazeapi",
     "scrape",
-    "scraper"
+    "scraper",
+    "tv",
+    "show"
   ],
-  "license": "ISC",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "request": "^2.88.2"
+  "scripts": {
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs/ && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
+    "build:esm": "tsc --module esnext --outDir dist/esm/ && echo '{\"type\":\"module\"}' > dist/esm/package.json",
+    "build": "npm run build:cjs && npm run build:esm",
+    "test": "node dist/cjs/tests/index.js",
+    "format": "prettier --write ."
+  },
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./dist/esm/src/index.js",
+  "types": "./dist/esm/src/index.d.ts",
+  "files": [
+    "./dist/"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/esm/src/index.js",
+        "types": "./dist/esm/src/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/cjs/src/index.js",
+        "types": "./dist/cjs/src/index.d.ts"
+      }
+    }
   },
   "devDependencies": {
-    "@types/cheerio": "^0.22.17",
-    "@types/node": "^13.11.0",
-    "@types/request": "^2.48.4",
-    "tslint": "^6.1.1",
-    "tslint-config-standard": "^9.0.0",
-    "typescript": "^3.8.3"
+    "prettier": "^3.5.2",
+    "typescript": "^5.7.3"
   }
 }
