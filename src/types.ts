@@ -160,9 +160,9 @@ export interface Show extends HasLinks, HasEmbedded {
   premiered: string;
   officialSite: string;
   schedule: Schedule;
-  ratring: Rating;
+  rating: Rating;
   weight: number;
-  netwoek: Network;
+  network: Network;
   webChannel: string | null;
   externals: Externals;
   image: Image;

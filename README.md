@@ -12,7 +12,7 @@ My approach rewrote the API from an object-oriented approach into a functional a
 
 ### License change
 
-As a sidenote, the original package was released under the ISC as per its `package.json`, but included no license notices or license file.
+As a side note, the original package was released under the ISC as per its `package.json`, but included no license notices or license file.
 This project is released under the AGPL-3.0, and the license file is available at [/LICENSE](https://github.com/kguzek/tvmaze-wrapper-ts/blob/main/LICENSE).
 
 ## Usage
