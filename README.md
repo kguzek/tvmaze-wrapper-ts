@@ -26,10 +26,10 @@ npm i tvmaze-wrapper-ts
 And import it directly using modern ES6 syntax:
 
 ```ts
-import tvMaze from "tvmaze-wrapper-ts";
+import { searchShow, findShowById } from "tvmaze-wrapper-ts";
 
-const show = await tvMaze.searchShow("the rookie");
-const details = await tvMaze.findShowById(show.id);
+const show = await searchShow("the rookie");
+const details = await findShowById(show.id);
 
 // Your code...
 ```
