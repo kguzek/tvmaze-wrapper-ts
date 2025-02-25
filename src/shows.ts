@@ -106,7 +106,7 @@ export const getShowAkas = (id: Numeric) =>
 
 /** Fetches https://api.tvmaze.com/shows?page=:page */
 export const getAllShows = (page?: Numeric) =>
-  fetchFromTvMaze<Show[]>("shows", { search: page ? { page } : [] });
+  fetchFromTvMaze<Show[]>("/shows", { search: page ? { page } : [] });
 
 /** Fetches https://api.tvmaze.com/updates/shows
  * @see {@link https://www.tvmaze.com/api#show-updates} for more information
