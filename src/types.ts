@@ -8,7 +8,7 @@ export interface Schedule {
 }
 
 export interface Rating {
-  average: number;
+  average: number | null;
 }
 
 export interface Country {
@@ -19,14 +19,15 @@ export interface Country {
 
 export interface Network {
   id: number;
-  names: string;
+  name: string;
   country: Country;
+  officialSite: string | null;
 }
 
 export interface Externals {
-  tvrage: number;
-  thetvdb: number;
-  imdb: string;
+  tvrage: number | null;
+  thetvdb: number | null;
+  imdb: string | null;
 }
 
 export interface Image {
@@ -98,7 +99,7 @@ export interface Episode extends HasLinks {
   /** @since 2.0.0 */
   rating: Rating;
   image: Image;
-  summary: string;
+  summary: string | null;
 }
 
 export interface Season extends HasLinks {
@@ -109,7 +110,7 @@ export interface Season extends HasLinks {
   episodeOrder: number;
   premiereDate: string;
   endDate: string;
-  network: Network;
+  network: Network | null;
   webChannel: string | null;
   image: Image;
   summary: string;
@@ -148,27 +149,40 @@ export interface Crew {
   person: Person;
 }
 
-export interface Show extends HasLinks, HasEmbedded {
+interface EndedShow {
+  status: "Ended";
+  ended: string;
+}
+
+interface RunningShow {
+  status: string;
+  ended: null;
+}
+
+interface BaseShow extends HasLinks, HasEmbedded {
   id: number;
   url: string;
   name: string;
   type: string;
-  language: string;
+  language: string | null;
   genres: string[];
-  status: string;
-  runtime: number;
+  runtime: number | null;
+  averageRuntime: number | null;
   premiered: string;
-  officialSite: string;
+  officialSite: string | null;
   schedule: Schedule;
   rating: Rating;
   weight: number;
-  network: Network;
+  network: Network | null;
   webChannel: string | null;
+  dvdCountry: null;
   externals: Externals;
   image: Image;
   summary: string;
   updated: number;
 }
+
+export type Show = BaseShow & (EndedShow | RunningShow);
 
 export interface ShowSearchResult {
   score: number;
