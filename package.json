@@ -1,6 +1,6 @@
 {
   "name": "tvmaze-wrapper-ts",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A Node.js wrapper to the TVmaze API written in TypeScript.",
   "license": "AGPL-3.0-only",
   "author": "Johann Berger (https://github.com/JohnDeved)",

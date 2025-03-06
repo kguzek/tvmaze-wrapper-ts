@@ -178,7 +178,7 @@ interface BaseShow extends HasLinks, HasEmbedded {
   dvdCountry: null;
   externals: Externals;
   image: Image;
-  summary: string;
+  summary: string | null;
   updated: number;
 }
 
